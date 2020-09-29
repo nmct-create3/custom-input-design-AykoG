@@ -56,6 +56,13 @@
     --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
     --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
     --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
 
 /*------------------------------------*\
@@ -611,16 +618,25 @@ input::placeholder {
     padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
     outline: none;
     transition: border var(--global-transition-timing-alpha);
+    border: var(var(--global-borderWidth) solid var(--global-input-borderColor));
+    background-color: var(--global-input-backgroundColor);
+    color: var(--global-input-color);
 }
 
 .c-input:hover {
     border-color: var(--global-color-neutral-xx-light);
+    border: var(var(--global-borderWidth) solid var(--global-input-borderColor));
+    background-color: var(--global-input-backgroundColor);
+    color: var(--global-input-color);
 }
 
 .c-input:focus,
 .c-input:active {
     border-color: var(--global-color-alpha);
     box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border: var(var(--global-borderWidth) solid var(--global-input-borderColor));
+    background-color: var(--global-input-backgroundColor);
+    color: var(--global-input-color);
 }
 
 /* option input for checkboxes and radio buttons */
@@ -678,6 +694,14 @@ input::placeholder {
 .c-button:active {
     background-color: var(--global-color-alpha-dark);
     box-shadow: none;
+}
+
+.c-option--hidden:checked + .c-custom-option {
+    background-color: red;
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
+    fill: blue;
 }
 
 /*------------------------------------*\
