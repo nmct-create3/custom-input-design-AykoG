@@ -645,6 +645,51 @@ input::placeholder {
     margin-right: var(--global-whitespace-sm);
 }
 
+.c-custom-option {
+    display: flex;
+}
+
+.c-custom-option__fake-input {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #E2E3E7;
+    margin-right: 8px;
+    box-shadow: inset;
+}
+
+.c-custom-option__fake-input--checkbox {
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-custom-option__fake-input--radio{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-custom-option__symbol {
+    /* opacity: 0; */
+    display: block;
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+    height: 10px;
+    width: 10px;
+    fill: alpha;
+}
+  
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+    height: 6px;
+    width: 6px;
+    background-color: var(--global-color-alpha);
+    border-radius: 100%;
+}
+
 /*
     Component: Label
     ---
