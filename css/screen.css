@@ -39,6 +39,8 @@
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
 
+    --custom-option-hover-borderColor: #81ADF0;
+
     /* border stuff */
     --global-borderRadius: 3px;
     --global-borderWidth: 1px;
@@ -452,6 +454,14 @@ input::placeholder {
     padding: 0;
 }
 
+.c-option-list {
+    margin-bottom: 24px;
+}
+
+.c-option-list__item {
+    margin-bottom: 12px;
+}
+
 /*
     Object: Button reset
     ---
@@ -647,6 +657,12 @@ input::placeholder {
 
 .c-custom-option {
     display: flex;
+    --custom-option-borderColor: var(--global-input-borderColor);
+    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
+}
+
+.c-custom-option:hover {
+    --custom-option-borderColor: var(--custom-option-hover-borderColor);
 }
 
 .c-custom-option__fake-input {
@@ -656,6 +672,11 @@ input::placeholder {
     border: 1px solid #E2E3E7;
     margin-right: 8px;
     box-shadow: inset;
+    border: 1px solid var(--custom-option-borderColor);
+}
+
+.c-custom-option__fake-input:hover {
+    box-shadow: var(--global-input-boxShadow);
 }
 
 .c-custom-option__fake-input--checkbox {
@@ -689,6 +710,31 @@ input::placeholder {
     width: 6px;
     background-color: var(--global-color-alpha);
     border-radius: 100%;
+}
+
+.c-custom-toggle--inverted {
+    margin-left: 0;
+}
+
+.c-toggle-list__item + .c-toggle-list__item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.c-toggle-list__item + .c-toggle-list__item + .c-toggle-list__item {
+    padding: 0;
+}
+
+.c-toggle__label--inverted {
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.c-custom-toggle--inverted {
+
 }
 
 /*
