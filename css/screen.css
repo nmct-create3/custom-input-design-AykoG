@@ -673,14 +673,15 @@ input::placeholder {
 }
 
 .c-custom-option__symbol {
-    /* opacity: 0; */
+    opacity: 0;
     display: block;
+    transition: opacity 0.25s ease-in-out;
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
     height: 10px;
     width: 10px;
-    fill: alpha;
+    fill: #3385FF;
 }
   
 .c-custom-option__fake-input--radio .c-custom-option__symbol {
@@ -742,11 +743,13 @@ input::placeholder {
 }
 
 .c-option--hidden:checked + .c-custom-option {
-    background-color: red;
+    /* background-color: red; */
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
-    fill: blue;
+    fill: #3385FF;
+    transition: opacity 0.25s ease-in-out;
+    opacity: 1;
 }
 
 /*------------------------------------*\
