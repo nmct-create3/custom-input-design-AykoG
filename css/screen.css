@@ -798,6 +798,14 @@ input::placeholder {
     opacity: 1;
 }
 
+.c-custom-select {
+    display: block;
+}
+
+.c-custom-select__symbol {
+    
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
