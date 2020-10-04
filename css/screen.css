@@ -38,8 +38,12 @@
     --global-color-neutral-xx-dark: #4b4c60;
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
-
+    
     --custom-option-hover-borderColor: #81ADF0;
+    --color-neutral-xxxx-dark: #20223A;
+    --global-card-backgroundColor: White;
+    --global-input-checkboxBackground: White;
+    --global-color-logopath2: var(--global-color-alpha);
 
     /* border stuff */
     --global-borderRadius: 3px;
@@ -65,6 +69,23 @@
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    --global-page-color: var(--color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--color-neutral-xxxx-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --global-page-color: White;
+        --global-page-backgroundColor: var(--color-neutral-xxxx-dark);
+        --global-color-neutral-xxxx-dark: White;
+        --color-alpha-x-dark: White;
+        --global-card-backgroundColor: #35374D;
+        --global-color-neutral-xx-dark: #B5B6C0;
+        --global-input-backgroundColor: #20223A;
+        --global-color-neutral-xxx-light: #20223A;
+        --global-input-checkboxBackground: #20223A;
+        --global-color-logopath2: White;
+    }
 }
 
 /*------------------------------------*\
@@ -85,13 +106,20 @@ html {
     background-color: var(--global-color-neutral-xxxx-light);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;    
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--global-page-color);
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--color-neutral-xxxx-dark);
+    }
 }
 
 /*
@@ -535,7 +563,7 @@ input::placeholder {
 }
 
 .c-logo__path--2 {
-    fill: var(--global-color-alpha);
+    fill: var(--global-color-logopath2);
 }
 
 .c-logo__path--3 {
@@ -549,7 +577,7 @@ input::placeholder {
 */
 
 .c-card {
-    background-color: White;
+    background-color: var(--global-card-backgroundColor);
     margin-bottom: var(--global-whitespace);
     border-radius: var(--global-borderRadius);
     box-shadow: 0 0 0 var(--global-borderWidth) rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
@@ -621,7 +649,6 @@ input::placeholder {
     border: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
     border-radius: var(--global-borderRadius);
     color: var(--global-color-neutral-xxxx-dark);
-    background-color: White;
     font-family: inherit;
     font-size: 16px;
     line-height: calc(var(--global-baseline) * 3);
@@ -673,6 +700,7 @@ input::placeholder {
     margin-right: 8px;
     box-shadow: inset;
     border: 1px solid var(--custom-option-borderColor);
+    background-color: var(--global-input-checkboxBackground);
 }
 
 .c-custom-option__fake-input:hover {
