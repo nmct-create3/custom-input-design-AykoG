@@ -1,0 +1,43 @@
+.c-custom-toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--global-whitespace);
+}
+
+.c-custom-toggle__fake-input {
+    display: block;
+    width: 48px;
+    height: 24px;
+    margin-right: var(--global-whitespace-md);
+    background-color: var(--global-toggle-backgroundColor);
+    border: 1px solid var(--global-toggle-borderColor);
+    border-radius: 24px;
+}
+
+.c-custom-toggle__fake-input::after {
+    content: "";
+    display: block;
+    width: 21.5px;
+    height: 21.5px;
+    border-radius: 50%;
+    background-color: var(--global-toggle-foregroundColor);
+    box-shadow: var(--global-toggle-boxShadow);
+    transition: all var(--global-transitionTiming-alpha);
+}
+
+/* Focus state */
+.c-option--hidden:focus + .c-custom-toggle .c-custom-toggle__fake-input {
+    border-color: var(--global-color-alpha-x-light);
+    box-shadow: var(--global-toggle-focus-boxShadow);
+}
+
+/* Checked state */
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input {
+    background-color: var(--global-toggle-checked-backgroundColor);
+    border-color: var(--global-toggle-checked-borderColor);
+}
+
+/* Checked state: circle transform */
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translateX(24px);
+}
