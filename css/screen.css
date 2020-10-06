@@ -761,10 +761,6 @@ input::placeholder {
     width: 100%;
 }
 
-.c-custom-toggle--inverted {
-
-}
-
 /*
     Component: Label
     ---
@@ -814,10 +810,6 @@ input::placeholder {
 .c-button:active {
     background-color: var(--global-color-alpha-dark);
     box-shadow: none;
-}
-
-.c-option--hidden:checked + .c-custom-option {
-    /* background-color: red; */
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
